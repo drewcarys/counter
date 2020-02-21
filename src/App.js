@@ -26,6 +26,16 @@ clear = () => {
     count: this.state.count = 0
   })
 }
+ToggleClick = () => {
+    this.setState({
+       show: !this.state.show
+     });
+
+  }
+
+
+
+
 
 
   render() {
@@ -38,6 +48,11 @@ clear = () => {
           <button type="button" onClick={this.clear}>Clear</button>
           <button type="button" onClick={this.increment}>Increment</button>
           <button type="button" onClick={this.decrement}>Decrement</button>
+
+          <button onClick={this.ToggleClick}>
+          { this.state.show ? 'Single Increment' : 'Double Increment' }
+        </button>
+        { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
 
       </div>
       </div>
